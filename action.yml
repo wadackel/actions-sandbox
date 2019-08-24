@@ -1,0 +1,11 @@
+name: 'sandbox'
+description: 'test'
+inputs:
+  token:
+    description: 'The GITHUB_TOKEN secret'
+  label:
+    description: 'The label'
+    default: 'test'
+runs:
+  using: 'node12'
+  main: 'lib/index.js'
