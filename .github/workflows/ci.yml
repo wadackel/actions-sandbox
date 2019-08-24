@@ -1,5 +1,5 @@
 name: Greet Everybody
-on: [pull_request]
+on: push
 
 jobs:
   build:
@@ -7,4 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./hello-world-action
+      # - uses: ./hello-world-action
+      - run: |
+          git checkout -b test
+          echo "# Hello" > tmp.md
+          git add tmp.md
+          git push origin test
