@@ -6,9 +6,7 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@master
       - uses: ./
         with:
-          repo: '${{ secrets.GITHUB_TOKEN }}'
+          token: "${{ secrets.GITHUB_TOKEN }}"
           label: 'test-label'
