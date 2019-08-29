@@ -8,8 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       # - uses: ./hello-world-action
-      - run: |
-          git checkout -b test
-          echo "# Hello" > tmp.md
-          git add tmp.md
-          git push origin test
+      - run: echo "hello" >> ./tmp.txt
+      - run: cat ./tmp.txt
