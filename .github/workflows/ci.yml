@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       # - uses: ./hello-world-action
-      - run: echo "hello" >> ./tmp.txt
-      - run: cat ./tmp.txt
+      - run: npm i
+      - run: npm start ${{ secrets.GITHUB_TOKEN }}

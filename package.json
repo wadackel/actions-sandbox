@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "actions-sandbox",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/github": "^1.0.0"
+  }
+}
