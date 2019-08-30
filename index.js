@@ -17,14 +17,14 @@ const octokit = new github.GitHub(token);
     process.exit(0);
   }
 
-  const columns = await octokit.projects.listColumns({ project_id: project.id });
+  const { data: columns } = await octokit.projects.listColumns({ project_id: project.id });
   const column = columns.find((c) => c.name === project_column);
   if (column == null) {
     console.log('column does not exist');
     process.exit(0);
   }
 
-  const cards = await octokit.projects.listCards({ column_id: column.id });
+  const { data: cards } = await octokit.projects.listCards({ column_id: column.id });
 
   console.log(cards.length);
 
