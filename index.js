@@ -11,7 +11,7 @@ const octokit = new github.GitHub(token);
 
 (async () => {
   const { data: projects } = await octokit.projects.listForRepo({ owner, repo });
-  const project = projects.find((p) => p.name === target);
+  const project = projects.find((p) => p.name === project_name);
   if (project == null) {
     console.log('project does not exist');
     process.exit(0);
