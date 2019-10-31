@@ -2,14 +2,27 @@ name: Greet Everybody
 on: push
 
 jobs:
-  build:
-    name: Greeting
+  status:
+    name: Dump
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      # - uses: ./hello-world-action
-      - run: npm i
-      - run: npm start ${{ secrets.GITHUB_TOKEN }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: sha
+        run: echo ${{ github.sha }}
+
+# jobs:
+#   build:
+#     name: Greeting
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: '12.x'
+#       # - uses: ./hello-world-action
+#       - run: npm i
+#       - run: npm start ${{ secrets.GITHUB_TOKEN }}
