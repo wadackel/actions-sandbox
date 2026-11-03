@@ -6,8 +6,8 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v1.2.0
+      - uses: actions/setup-node@v1.4.6
         with:
           node-version: '12.x'
       # - uses: ./hello-world-action
